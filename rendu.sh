@@ -10,5 +10,5 @@ if [ ! -d ".git" ]; then
 fi
 
 git add --all
-git commit -m "Init repo"
+git commit -m "update from $LOGGIN"
 git push origin master
