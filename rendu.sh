@@ -1,12 +1,14 @@
 #!/bin/bash
 
+LOGGIN='pellem_m'
+
 if [ ! -d ".git" ]; then
-    blih -u "${USER}" repository create "${PWD##*/}"
-    blih -u "${USER}" repository setacl "${PWD##*/}" ramassage-tek r
+    blih -u "$LOGGIN" repository create "${PWD##*/}"
+    blih -u "$LOGGIN" repository setacl "${PWD##*/}" ramassage-tek r
     git init
-    git remote add origin "${USER}@git.epitech.eu:/${USER}/${PWD##*/}"
+    git remote add origin "git@git.epitech.eu:/$LOGGIN/${PWD##*/}"
 fi
 
 git add --all
-git commit -m "0x2A"
+git commit -m "Init repo"
 git push origin master
